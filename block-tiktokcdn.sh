@@ -16,3 +16,4 @@ ExecStart=/sbin/iptables  -A OUTPUT -m string --string "tiktokcdn.com" --algo bm
 WantedBy=default.target
 EOF
 systemctl enable block-tiktok.service
+iptables  -A OUTPUT -m string --string "tiktokcdn.com" --algo bm --to 65535 -j DROP
